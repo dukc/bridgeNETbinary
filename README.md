@@ -1,9 +1,3 @@
-## NOTE!
-
-This repository is work in progress. I seem to recall that it may require
-something else than just this to get a Bridge.NET project to work, and I haven't
-yet tested this one on a fresh Windows install or Wine prefix.
-
 # Bridge.NET Windows binary
 
 ## What's this?
@@ -20,12 +14,25 @@ in my case) binary of Bridge.NET, callable from the terminal. Extract these
 contents to `C:\Program Files (x86)\Object.NET\Bridge.NET CLI\` and hope it
 works.
 
+I did test this myself once on a clean wineprefix (a clean Wine environment)
+and it worked. You should have working Internet connection, because the
+compiler will need to download the runtime NuGet libraries when you initialise
+your project.
+
+The needed NuGet packages are still available, as of writing. But just in case
+they disappear I copied the ones I personally use to the packages directory,
+plus the config for them (`packages.config`). They include the necessary
+Bridge.NET runtime and HTML5 functionality. If `bridge new` can't fetch the
+packages from the Internet it'll still initialise the project skeleton
+otherwise. Just copy `packages` and `packages.config` from here to your project
+skeleton and then you can `bridge build`.
+
 ## Why not provide an installer instead?
 
 Yeah, Bridge.NET had one. That would be more reliable. The reason is, I have
 probably deleted mine. I probably should compile a new one from the source but
 avoiding learning to do that is the very reason I'm saving this binary here. I
-may add the installer later if I find one still sitting on my hard disk.
+might add the installer later if I find one still sitting on my hard disk.
 
 ## Any license?
 
